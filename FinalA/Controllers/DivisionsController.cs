@@ -18,7 +18,7 @@ namespace FinalA.Controllers
         // GET: Divisions
         public ActionResult Index()
         {
-            return View(db.Divisions.ToList().OrderByDescending(t => t.Name));
+            return View(db.Divisions.ToList().OrderBy(t => t.Name));
         }
 
         // GET: Divisions/Details/5
