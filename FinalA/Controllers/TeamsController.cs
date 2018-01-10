@@ -30,7 +30,7 @@ namespace FinalA.Controllers
         public ViewResult Index()
         {
             var teams = db.Teams.Include(t => t.Division);
-            return View(teams.ToList());
+            return View(teams.ToList().OrderByDescending(t => t.Points));
         }
 
         // GET: Teams/Details/5
