@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FinalA.Models.Division>
+
+@{
+    ViewBag.Title = "NHL Divisions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NHL Divisions</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Name,"Details", new { id = item.DivisionID })
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DivisionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DivisionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DivisionID })
+        </td>*@
+    </tr>
+}
+
+</table>
