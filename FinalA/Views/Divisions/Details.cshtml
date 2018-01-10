@@ -11,21 +11,14 @@
     <h4>Division</h4>
     <hr />
 
-    @*@foreach (var item in Model.Teams.OrderBy(t => t.DivisionID == Model.DivisionID)
+    @foreach (var item in Model.Teams.OrderBy(t => t.DivisionID == Model.DivisionID))
     {
-            @Html.DisplayNameFor(model => model.Team.Name)
-    }*@
+            <td>
+                @Html.ActionLink(item.Name, "Details", new { id = item.DivisionID })
+            </td>
+    }
 
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
+    
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")

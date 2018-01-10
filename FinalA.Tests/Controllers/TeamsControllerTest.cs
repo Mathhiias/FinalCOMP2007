@@ -48,7 +48,7 @@ namespace FinalA.Tests.Controllers
         public void DetailsValidId()
         {
             // act
-            var actual = (Team)controller.Details(1).Model;
+            var actual = (Team)controller.Details(0).Model;
             // assert   
             Assert.AreEqual(teams.ToList()[0], actual);
         }
