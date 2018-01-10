@@ -11,9 +11,9 @@
     <h4>Division</h4>
     <hr />
 
-    @*@foreach (var item in Teams)
+    @*@foreach (var item in Model.Teams.OrderBy(t => t.DivisionID == Model.DivisionID)
     {
-
+            @Html.DisplayNameFor(model => model.Team.Name)
     }*@
 
     <dl class="dl-horizontal">
